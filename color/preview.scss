@@ -1,0 +1,111 @@
+#preview-body {
+    li {
+        list-style: none;
+    }
+    .prepage {
+        #preview-header {
+            &:after {
+                content: "";
+                display: block;
+                height: 0px;
+                clear: both;
+            }
+            #preview-logo {
+                float: left;
+            }
+            .menu {
+                float: left;
+                li {
+                    float: left;
+                    margin: 10px 10px;
+                }
+            }
+        }
+        #content-top {
+            #block-revslider-1 {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        #page {
+            margin: 0px;
+            #main {
+                #content {
+                    #page-title {
+                        padding-top: 5px!important;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    #block-views-latest-news-block-1 {
+                        width: 70%;
+                        float: left;
+                        .view-content {
+                            width: 100%;
+                            li {
+                                width: 30%;
+                                float: left;
+                                margin: 10px 5px;
+                                .views-field-field-image {
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                                .views-field-created {
+                                    float: right;
+                                }
+                            }
+                        }
+                    }
+                    #block-views-shop-page-block-1 {
+                        width: 30%;
+                        float: left;
+                        .view-content {
+                            li {
+                                text-align: center;
+                                padding: 10px 5px;
+                                .views-field-title {
+                                    border: 5px double;
+                                    outline: 1px solid;
+                                }
+                            }
+                        }
+                    }
+                    #block-views-products-block-1 {
+                        .view-content {
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        .view-footer {
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        #footer-wrapper {
+            #block-menu-menu-footer-menu {
+                width: 100%;
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 0px;
+                    clear: both;
+                }
+                .menu {
+                    li {
+                        float: left;
+                        margin: 10px;
+                    }
+                }
+            }
+            #block-block-3 {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

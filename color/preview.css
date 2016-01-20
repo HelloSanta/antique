@@ -1,0 +1,108 @@
+/* line 2, preview.scss */
+#preview-body li {
+  list-style: none;
+}
+/* line 7, preview.scss */
+#preview-body .prepage #preview-header:after {
+  content: "";
+  display: block;
+  height: 0px;
+  clear: both;
+}
+/* line 13, preview.scss */
+#preview-body .prepage #preview-header #preview-logo {
+  float: left;
+}
+/* line 16, preview.scss */
+#preview-body .prepage #preview-header .menu {
+  float: left;
+}
+/* line 18, preview.scss */
+#preview-body .prepage #preview-header .menu li {
+  float: left;
+  margin: 10px 10px;
+}
+/* line 26, preview.scss */
+#preview-body .prepage #content-top #block-revslider-1 img {
+  width: 100%;
+}
+/* line 31, preview.scss */
+#preview-body .prepage #page {
+  margin: 0px;
+}
+/* line 35, preview.scss */
+#preview-body .prepage #page #main #content #page-title {
+  padding-top: 5px !important;
+}
+/* line 37, preview.scss */
+#preview-body .prepage #page #main #content #page-title img {
+  width: 100%;
+}
+/* line 41, preview.scss */
+#preview-body .prepage #page #main #content #block-views-latest-news-block-1 {
+  width: 70%;
+  float: left;
+}
+/* line 44, preview.scss */
+#preview-body .prepage #page #main #content #block-views-latest-news-block-1 .view-content {
+  width: 100%;
+}
+/* line 46, preview.scss */
+#preview-body .prepage #page #main #content #block-views-latest-news-block-1 .view-content li {
+  width: 30%;
+  float: left;
+  margin: 10px 5px;
+}
+/* line 51, preview.scss */
+#preview-body .prepage #page #main #content #block-views-latest-news-block-1 .view-content li .views-field-field-image img {
+  width: 100%;
+}
+/* line 55, preview.scss */
+#preview-body .prepage #page #main #content #block-views-latest-news-block-1 .view-content li .views-field-created {
+  float: right;
+}
+/* line 61, preview.scss */
+#preview-body .prepage #page #main #content #block-views-shop-page-block-1 {
+  width: 30%;
+  float: left;
+}
+/* line 65, preview.scss */
+#preview-body .prepage #page #main #content #block-views-shop-page-block-1 .view-content li {
+  text-align: center;
+  padding: 10px 5px;
+}
+/* line 68, preview.scss */
+#preview-body .prepage #page #main #content #block-views-shop-page-block-1 .view-content li .views-field-title {
+  border: 5px double;
+  outline: 1px solid;
+}
+/* line 77, preview.scss */
+#preview-body .prepage #page #main #content #block-views-products-block-1 .view-content img {
+  width: 100%;
+}
+/* line 81, preview.scss */
+#preview-body .prepage #page #main #content #block-views-products-block-1 .view-footer {
+  width: 100%;
+  text-align: center;
+}
+/* line 90, preview.scss */
+#preview-body .prepage #footer-wrapper #block-menu-menu-footer-menu {
+  width: 100%;
+}
+/* line 92, preview.scss */
+#preview-body .prepage #footer-wrapper #block-menu-menu-footer-menu:after {
+  content: "";
+  display: block;
+  height: 0px;
+  clear: both;
+}
+/* line 99, preview.scss */
+#preview-body .prepage #footer-wrapper #block-menu-menu-footer-menu .menu li {
+  float: left;
+  margin: 10px;
+}
+/* line 105, preview.scss */
+#preview-body .prepage #footer-wrapper #block-block-3 {
+  width: 100%;
+  text-align: center;
+}

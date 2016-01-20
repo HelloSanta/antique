@@ -1,0 +1,85 @@
+/* line 2, colors.scss */
+body {
+  background: #ffffff;
+  /*    #footer-wrapper {
+          background: #ffff05;
+      }*/
+}
+/* line 4, colors.scss */
+body #header {
+  background: #ffff02;
+}
+/* line 7, colors.scss */
+body #page {
+  background: #ffff03;
+}
+/* line 9, colors.scss */
+body #page #content {
+  background: #ffff04;
+}
+
+/* line 19, colors.scss */
+body {
+  color: #aaaa04;
+}
+/* line 21, colors.scss */
+body a {
+  color: #aaaa05;
+}
+/* line 24, colors.scss */
+body h1 {
+  color: #aaaa01;
+}
+/* line 26, colors.scss */
+body h1 a {
+  color: #aaaa01 !important;
+}
+/* line 30, colors.scss */
+body h2 {
+  color: #aaaa02;
+}
+/* line 32, colors.scss */
+body h2 a {
+  color: #aaaa02 !important;
+}
+/* line 41, colors.scss */
+body #header .header-wrape .header__region .menu .menu__item a {
+  color: #aaaa03;
+}
+/* line 43, colors.scss */
+body #header .header-wrape .header__region .menu .menu__item a:hover {
+  color: #cccc01;
+}
+/* line 53, colors.scss */
+body #page #content {
+  color: #aaaa04;
+}
+/* line 55, colors.scss */
+body #page #content a {
+  color: #aaaa05;
+}
+/* line 58, colors.scss */
+body #page #content a:hover {
+  color: #cccc02 !important;
+}
+/* line 63, colors.scss */
+body #footer-wrapper {
+  color: #aaaa07;
+  border-color: #aaaa07;
+}
+/* line 66, colors.scss */
+body #footer-wrapper a {
+  color: #aaaa07;
+}
+/* line 68, colors.scss */
+body #footer-wrapper a:hover {
+  color: #cccc03;
+}
+/* line 75, colors.scss */
+body #footer-wrapper #footer .menu .menu__item a {
+  color: #aaaa03;
+}
+/* line 77, colors.scss */
+body #footer-wrapper #footer .menu .menu__item a:hover {
+  color: #cccc01;
+}

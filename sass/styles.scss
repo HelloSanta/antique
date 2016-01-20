@@ -1,0 +1,1106 @@
+        /**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+        /* Import Sass mixins, variables, Compass modules, etc. */
+        
+        @import "mixin";
+        @import "init";
+        /* HTML element (SMACSS base) rules */
+        
+        @import "normalize";
+        /* Layout rules */
+        
+        @import "layouts/_responsive2.scss";
+        /* Component (SMACSS module) rules */
+        
+        @import "components/misc";
+        // Optionally, add your own components here.
+        @import "print";
+        /* SMACSS theme rules */
+        /* @import "theme-A"; */
+        /* @import "theme-B"; */
+        
+        $h1_color:#A8A8A8;
+        $h2_color:#CCAB67;
+        $link_color:#6A6A6A;
+        $product_link:#CCAB67;
+        $border_color:#A8A8A8;
+        $content_color:#6A6A6A;
+        $content-margin-top:40px;
+        //extend 
+        %more_link {
+            a {
+                position: relative;
+                color: $product_link;
+                &:after {
+                    color: $border_color;
+                    content: ">";
+                    border: 1px solid $border_color;
+                    @include border-radius(100%);
+                    padding: 8px;
+                    margin-left: 10px;
+                    @include transition(all 1s);
+                    position: absolute;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    top: -7px;
+                    left: 95px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+                &:hover:after {
+                    left: 110px;
+                }
+            }
+        }
+        
+        //for all code------------------------------------------------------------------------------------------------------------------------------------------------------------
+        #loading {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #fff;
+            // background: url('../images/page-loader.gif') 50% 50% no-repeat #f9f9f9
+        }
+        
+        .spinner {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            text-align: center;
+            @include center(100px, 100px);
+            -webkit-animation: sk-rotate 2.0s infinite linear;
+            animation: sk-rotate 2.0s infinite linear;
+        }
+        
+        .dot1,
+        .dot2 {
+            width: 60%;
+            height: 60%;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            background-color: #333;
+            border-radius: 100%;
+            -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+            animation: sk-bounce 2.0s infinite ease-in-out;
+        }
+        
+        .dot2 {
+            top: auto;
+            bottom: 0;
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+        
+        @-webkit-keyframes sk-rotate {
+            100% {
+                -webkit-transform: rotate(360deg)
+            }
+        }
+        
+        @keyframes sk-rotate {
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg)
+            }
+        }
+        
+        @-webkit-keyframes sk-bounce {
+            0%,
+            100% {
+                -webkit-transform: scale(0.0)
+            }
+            50% {
+                -webkit-transform: scale(1.0)
+            }
+        }
+        
+        @keyframes sk-bounce {
+            0%,
+            100% {
+                transform: scale(0.0);
+                -webkit-transform: scale(0.0);
+            }
+            50% {
+                transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+            }
+        }
+        
+        //smoke
+        @include keyframes(smoke) {
+            0% {
+                left: 0%;
+                opacity: 0;
+            }
+            20% {
+                //bottom: 50%;
+                opacity: 20;
+            }
+            50% {
+                //bottom: 50%;
+                opacity: 100;
+            }
+            100% {
+                left: 60%;
+                opacity: 0;
+            }
+        }
+        
+        @include keyframes(smoke1) {
+            0% {
+                left: 50%;
+                opacity: 0;
+            }
+            20% {
+                //bottom: 50%;
+                opacity: 20;
+            }
+            50% {
+                //bottom: 50%;
+                opacity: 100;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+        
+        //end smoke code
+        body {
+            //background-color: black;
+            position: relative;
+            font-family: "微軟正黑體";
+            line-height: 1.7em;
+            border-bottom: 8px solid $border_color;
+            img {
+                height: auto !important;
+                width: 100%;
+            }
+            h1.page__title {
+                margin: 0px;
+                border-bottom: 1px solid $border_color;
+                //color: $h1_color;
+                padding: 25px 0px 15px 0px;
+            }
+            h2 {
+                margin: 0px;
+                font-size: 22px;
+                //color: $h2_color;
+                a {
+                    //color: $h2_color;
+                }
+            }
+            h5 {
+                margin: 0px;
+                padding: 5px;
+            }
+            a {
+                text-decoration: none;
+                outline: 0 !important;
+            }
+            ul {
+                margin: 0px;
+                padding: 0px;
+                li {
+                    list-style-type: none;
+                    list-style-image: none;
+                }
+            }
+            .block {
+                margin: 0;
+            }
+            #navigation {
+                display: none;
+            }
+            #back-top{
+                margin-bottom: 0px!important;
+            }
+            //頁碼---------------------------------------------------
+            .pager {
+                margin: 30px 0px;
+                .pager-next {
+                    @extend %more_link;
+                }
+            }
+            //麵包屑----------------------------------------------------
+            .breadcrumb {
+                float: right;
+                padding: 30px 0px 22px 0px;
+                color: $content_color;
+                a {
+                    color: $content_color;
+                }
+            }
+            //responsive-menu---------------------------------------------------------------
+            .responsive-menu {
+                transition: all .25s;
+                position: fixed;
+                top: 13px;
+                right: 8px;
+                height: 36px;
+                width: 36px;
+                z-index: 600;
+                cursor: pointer;
+                border-radius: 5px;
+                border: 1px solid rgba(0, 0, 0, 0);
+                // overflow: scroll;
+                .bar {
+                    position: fixed;
+                    right: 12px;
+                    top: 30px;
+                    height: 6px;
+                    width: 30px;
+                    border-radius: 15px;
+                    background-color: rgba(0, 0, 0, 0.95);
+                    &:before {
+                        transition: all .25s;
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: -8px;
+                        height: 6px;
+                        width: 30px;
+                        border-radius: 15px;
+                        background-color: rgba(0, 0, 0, 0.75);
+                    }
+                    &:after {
+                        transition: all .25s;
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 8px;
+                        height: 6px;
+                        width: 30px;
+                        border-radius: 15px;
+                        background-color: rgba(0, 0, 0, 0.75);
+                    }
+                }
+                .menu {
+                    transition: all .05s;
+                    position: fixed;
+                    right: -9000px;
+                }
+            }
+            .menu-expanded {
+                transition: all .25s;
+                text-align: center;
+                height: 100%;
+                width: 100%;
+                border-radius: 0px;
+                top: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.85)!important;
+                .bar {
+                    background-color: transparent;
+                    transition: all .25s;
+                    &:before {
+                        transition: all .25s;
+                        content: "";
+                        transform: rotate(45deg);
+                        top: -0px;
+                    }
+                    &:after {
+                        transition: all .25s;
+                        content: "";
+                        transform: rotate(-45deg);
+                        top: 0px;
+                    }
+                }
+                .menu {
+                    transition: all .05s;
+                    position: relative;
+                    right: 0px;
+                    top: 50%;
+                    @include transformxy(0%, -50%);
+                    z-index: 2;
+                    .menu__item {
+                        width: 100%;
+                        a {
+                            transition: all .15s;
+                            text-decoration: none;
+                            color: white!important;
+                            &:hover {
+                                transition: all .15s;
+                                letter-spacing: 2px;
+                                border: 1px solid rgba(255, 255, 255, .15);
+                            }
+                        }
+                    }
+                }
+            }
+            //hover效果------------------------------------------------
+            //圖片標題遮罩效果------------------------------------
+            //end
+            .row-effect {
+                position: relative;
+                .field-name-title,
+                .views-field-title {
+                    position: absolute;
+                    overflow: hidden;
+                    @extend %text-v-center;
+                    @include transition(all 0.5s);
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0);
+                    a {
+                        @include transition(all 1s);
+                        position: absolute;
+                        top: -80px;
+                        left: 50%;
+                        @include transformxy(-50%, -50%);
+                        opacity: 0;
+                        color: #ffffff;
+                        &:after {
+                            display: block;
+                            height: 25px;
+                            width: 20px;
+                            margin: 0 auto;
+                            content: "➤";
+                            font-size: 16px;
+                            padding-left: 5px;
+                            line-height: 25px;
+                            border: 1px solid;
+                            border-radius: 100px;
+                        }
+                    }
+                    &:hover {
+                        background: rgba(0, 0, 0, 0.6);
+                        a {
+                            top: 50%;
+                            left: 50%;
+                            @include transformxy(-50%, -50%);
+                            z-index: 0;
+                            opacity: 100;
+                            &:hover {
+                                color: $h2_color;
+                            }
+                        }
+                    }
+                }
+            }
+            .row-effect-ios {
+                .field-name-title,
+                .views-field-title {
+                    background: rgba(0, 0, 0, 0.6);
+                    a {
+                        top: 50%;
+                        left: 50%;
+                        @include transformxy(-50%, -50%);
+                        opacity: 100;
+                        color: #ffffff!important;
+                        &:hover {
+                            color: $h2_color;
+                        }
+                    }
+                }
+            }
+            //圖片放大--------------------------------------------------
+            .row-effect-2 {
+                .views-field-field-image {
+                    @include zoom-large(1.1);
+                }
+            }
+        }
+        
+        //end for all code------------------------------------------------------------------------------------------------------------------------------------------------------- 
+        //特定頁面設定-------------------------------------------------------------------------------------------------------------
+        .front {
+            //首頁h1置中-----------------------------------------------
+            #page-title {
+                position: relative;
+                text-align: center;
+                padding: 30px!important;
+                color: rgba(0, 0, 0, 0);
+                &:after {
+                    content: "123";
+                    display: block;
+                    background: url("/sites/default/files/h1bg.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include transformxy(-50%,
+                    -50%);
+                    width: 100%;
+                    max-width: 600px;
+                }
+            }
+            //content-top-banner------------------------------
+            #content-top {
+                #block-revslider-1 {
+                    max-height: 600px;
+                }
+            }
+        }
+        
+        .not-front {
+            //content-top-banner------------------------------
+            #content-top {
+                .block-imageblock {
+                    height: 400px;
+                }
+            }
+        }
+        
+        .page-user {
+            #header {
+                position: relative!important;
+            }
+        }
+        
+        //header code start--------------------------------------------------------------------------------------------------------------------------
+        #header {
+            position: absolute;
+            z-index: 111;
+            width: 100%;
+            //background-color: rgba(255, 255, 255, 0.7);
+            opacity: 0.7;
+            .header-wrape {
+                max-width: 1440px;
+                margin: 0 auto;
+                #logo {
+                    padding: 5px;
+                }
+                .header__region {
+                    text-align: right;
+                    clear: none;
+                    line-height: 65px;
+                    .menu {
+                        margin: 0px;
+                        .menu__item {
+                            display: inline-block;
+                            margin-right: 30px;
+                            a {
+                                //color: $link_color;
+                                &:hover {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        // header end
+        //content-top code start---------------------------------------------------------------------------------
+        #content-top {
+            #block-revslider-1 {
+                position: relative;
+                overflow: hidden;
+                .smoke {
+                    display: block;
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    height: 701px;
+                    width: 481px;
+                    z-index: 30;
+                }
+                .smoke-odd {
+                    background: url("/sites/default/files/smoke.png");
+                }
+                .smoke-even {
+                    background: url("/sites/default/files/smoke1.png");
+                }
+                .s1 {
+                    left: -15%;
+                    top: 7%;
+                    @include animation(smoke 55s infinite);
+                }
+                .s2 {
+                    top: 25%;
+                    left: 5%;
+                    @include animation(smoke 80s infinite);
+                }
+                .s3 {
+                    left: 50%;
+                    top: 40%;
+                    @include animation(smoke 45s infinite);
+                }
+                .s4 {
+                    left: 25%;
+                    top: 50%;
+                    @include animation(smoke 50s infinite);
+                }
+                .s5 {
+                    left: 65%;
+                    top: 30%;
+                    @include animation(smoke1 50s infinite);
+                }
+                .s6 {
+                    left: 75%;
+                    top: 60%;
+                    @include animation(smoke1 55s infinite);
+                }
+            }
+        }
+        
+        //content-top end
+        #page {
+            #main {
+                padding: 0px;
+                //content code start-----------------------------------------------------------------------------------------
+                #content {
+                    padding: 0px 20px;
+                    // 首頁 最新消息------------------------------------------------------------------------
+                    #block-views-latest-news-block-1 {
+                        margin-top: $content-margin-top;
+                        color: $content_color;
+                        .view-content {
+                            ul {
+                                li.views-row {
+                                    display: inline-block;
+                                    border-bottom: 1px solid $border_color;
+                                    @include transition(all 1s);
+                                    .views-field-created {
+                                        text-align: right;
+                                    }
+                                }
+                            }
+                        }
+                        .more-link {
+                            @include zen-clear();
+                            @extend %more_link;
+                            padding-right: 30px;
+                        }
+                    }
+                    //店家資訊---------------------------------------------
+                    #block-views-shop-page-block-1,
+                    .field-name-shop-block {
+                        position: relative;
+                        /*position: absolute;
+                        top: 120px;
+                        right: 0px;*/
+                        margin-top: $content-margin-top;
+                        box-sizing: border-box;
+                        padding: 0 20px;
+                        color: $content_color;
+                        a {
+                            color: $content_color;
+                        }
+                        .view-content {
+                            .item-list {
+                                ul {
+                                    .views-row {
+                                        padding: 10%;
+                                        .views-field {
+                                            text-align: center;
+                                        }
+                                        .views-field-title {
+                                            margin-bottom: 20px;
+                                            .field-content {
+                                                padding: 5px;
+                                                border: 1px solid $border_color;
+                                                border-style: double;
+                                                border-width: 7px;
+                                                outline: 1px solid #000000;
+                                            }
+                                        }
+                                        .views-field-nothing {
+                                            #info {
+                                                .info-item {
+                                                    display: inline-block;
+                                                    /*                                                    padding: 0 15px;*/
+                                                }
+                                                .info-item.info1 {
+                                                    padding: 0 10px;
+                                                }
+                                                .info-item.info2 {
+                                                    padding: 0 10px;
+                                                }
+                                                .info3 {
+                                                    padding: 0 10px;
+                                                    .fa-facebook {
+                                                        border: 2px solid;
+                                                        border-radius: 100px;
+                                                        font-size: 10px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .views-row-odd {
+                                        border-bottom: 1px solid $border_color;
+                                    }
+                                }
+                            }
+                        }
+                        .more-link{
+                            text-align: center;
+                        }
+                    }
+                    //首頁 產品資訊----------------------------------------------------------------------------
+                    #block-views-products-block-1 {
+                        width: 100%;
+                        position: relative;
+                        margin-top: $content-margin-top;
+                        .view-content {
+                            ul {
+                                li.views-row {
+                                    box-sizing: border-box;
+                                    padding: 2px;
+                                    @include transition(all 1s);
+                                    .node-products {
+                                        margin-top: 0px!important;
+                                    }
+                                    .field-name-title {}
+                                    .field-name-field-main-image {
+                                        img {
+                                            float: left;
+                                        }
+                                        &:after {
+                                            display: block;
+                                            position: absolute;
+                                            left: 0px;
+                                            top: 0px;
+                                            height: 100%;
+                                            width: 100%;
+                                            content: "";
+                                            background: rgba(0, 0, 0, 0.05);
+                                            box-sizing: border-box;
+                                            padding: 2px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .view-footer {
+                            text-align: center;
+                            a {
+                                border: 1px solid $border_color;
+                                border-radius: 50px;
+                                padding: 5px 20px;
+                                color: $content_color;
+                                &:hover {
+                                    color: #ffffff;
+                                    background: rgba(0, 0, 0, 0.75);
+                                }
+                            }
+                        }
+                    }
+                    // 最新消息page-------------------------------------------------------------------------------
+                    .news-page {
+                        margin-top: $content-margin-top;
+                        color: $content_color;
+                        ul {
+                            li.views-row {
+                                .views-field-field-image {}
+                                .views-field-title {}
+                                .views-field-body {
+                                    border-bottom: 1px solid $border_color;
+                                    padding-bottom: 15px;
+                                }
+                                .views-field-created {
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                    //產品介紹page------------------------------------------------------------------------------
+                    .products-page {
+                        .view-filters {
+                            padding: 15px 0px;
+                            a {
+                                color: $content_color;
+                            }
+                            .views-exposed-form {
+                                .views-exposed-widgets {
+                                    margin: 0px;
+                                    #edit-tid-wrapper {
+                                        padding: 0px;
+                                        float: right;
+                                        .form-type-bef-link {
+                                            display: inline-block;
+                                            padding: 0px 10px;
+                                            position: relative;
+                                            &:after {
+                                                content: "";
+                                                position: absolute;
+                                                left: 0px;
+                                                top: 7.5px;
+                                                width: 1px;
+                                                height: 50%;
+                                                display: block;
+                                                background: #000000;
+                                            }
+                                        }
+                                        #edit-tid-all {
+                                            &:after {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .view-content {
+                            ul {
+                                li.views-row {
+                                    display: inline-block;
+                                    position: relative;
+                                    .views-field-field-image {
+                                        @include zoom-large(1.1);
+                                    }
+                                    .views-field-title {}
+                                    .views-field {
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //分店資訊page--------------------------------------------------------------------------------------
+                    .shop-page {
+                        margin-top: $content-margin-top;
+                        ul {
+                            li.views-row {
+                                border: 1px solid $border_color;
+                                padding: 20px;
+                                box-sizing: border-box;
+                                text-align: center;
+                                .views-field-title {
+                                    font-size: 28px;
+                                }
+                                .views-field-field-sub-title {
+                                    font-size: 20px;
+                                    margin: 10px 0px;
+                                    &:after {
+                                        content: "";
+                                        display: block;
+                                        width: 5%;
+                                        height: 3px;
+                                        background: #000000;
+                                        margin: 10px auto;
+                                    }
+                                }
+                                .views-field-field-shop-img {
+                                    margin-top: 20px;
+                                }
+                                .views-field-field-map {
+                                    iframe {
+                                        width: 100%;
+                                        pointer-events: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    //最新消息node-----------------------------------------------------------------------------------
+                    .node-latest-news {
+                        margin-top: $content-margin-top;
+                        img {
+                            width: auto;
+                        }
+                    }
+                    //其他消息區塊
+                    #block-views-latest-news-block-2 {
+                        .block-title {
+                            border-bottom: 1px solid $border_color;
+                            margin-bottom: $content-margin-top;
+                            color: $h1_color;
+                        }
+                        .view-content {
+                            .views-row {
+                                position: relative;
+                                .views-field-title {}
+                            }
+                        }
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    //產品介紹node-----------------------------------------------------------------------------------
+                    .node-products {
+                        margin-top: $content-margin-top;
+                        .field-name-field-image {
+                            clear: left;
+                            #field-slideshow-1-wrapper {
+                                position: relative;
+                                .field-slideshow {}
+                                #field-slideshow-1-controls {
+                                    position: absolute;
+                                    max-width: 560px;
+                                    width: 100%;
+                                    top: 50%;
+                                    margin-top: -10px;
+                                    z-index: 20;
+                                    .prev {
+                                        float: left;
+                                        width: 40px;
+                                        height: 40px;
+                                        background: url("/sites/default/files/arrow-2.png");
+                                        background-position: center;
+                                        color: rgba(0, 0, 0, 0);
+                                        font-size: 0px;
+                                    }
+                                    .next {
+                                        float: right;
+                                        width: 40px;
+                                        height: 40px;
+                                        background: url("/sites/default/files/arrow-1.png");
+                                        background-position: center;
+                                        color: rgba(0, 0, 0, 0);
+                                        font-size: 0px;
+                                    }
+                                }
+                            }
+                        }
+                        .field-name-body,
+                        .field-name-field-product-info,
+                        .sharethis-buttons {
+                            box-sizing: border-box;
+                            padding: 0px 10px;
+                        }
+                    }
+                    //其他產品區塊--------------------------------------------------------------------------------------------
+                    .related-prodcut-block {
+                        width: 100%;
+                        clear: both;
+                        .title {
+                            border-bottom: 1px solid $border_color;
+                            margin-bottom: $content-margin-top;
+                            //color: $h1_color;
+                        }
+                        ul {
+                            li.views-row {
+                                position: relative;
+                                /*.views-field-title {
+                                    @include center(null,
+                                    null);
+                                    height: 100%;
+                                    width: 100%;
+                                    background-color: rgba(0, 0, 0, 0.25);
+                                    @include opacity(0);
+                                    @include transition(all 0.5s);
+                                    h2 {
+                                        height: 100%;
+                                    }
+                                    a {
+                                        @extend %text-v-center;
+                                        height: 100%;
+                                        margin-top: -20px;
+                                        @include transition(all 0.5s);
+                                    }
+                                    &:hover {
+                                        @include opacity(1);
+                                        a {
+                                            margin-top: 0px;
+                                            color: #ffffff;
+                                        }
+                                    }
+                                }*/
+                            }
+                        }
+                    }
+                    // 關於我們--------------------------------------------------------------------------------------------------
+                    .view-about-us {
+                        margin-top: $content-margin-top;
+                        .view-content {
+                            li.views-row {
+                                margin-bottom: 20px;
+                                @extend %clearfix;
+                                .views-field {
+                                    text-align: center;
+                                }
+                                .views-field-field-about-us-img {}
+                                .views-field-field-us-info-title {
+                                    font-size: 28px;
+                                }
+                                .views-field-field-us-info-subtitle {
+                                    font-size: 28px;
+                                }
+                                .views-field-field-us-info-content {
+                                    h2 {
+                                        font-size: 28px;
+                                    }
+                                    .field-content {
+                                        padding: 0px 20px;
+                                    }
+                                    p {
+                                        margin: 0px;
+                                    }
+                                    p.title_subtitle {
+                                        font-size: 28px;
+                                        &:after {
+                                            content: "";
+                                            display: block;
+                                            width: 10px;
+                                            height: 3px;
+                                            background-color: #000;
+                                            margin: 25px auto;
+                                        }
+                                    }
+                                    p {
+                                        line-height: 30px;
+                                        max-width: 600px;
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                            .views-row-last {
+                                margin-bottom: 0px!important;
+                            }
+                        }
+                        .view-footer {
+                            .more-link {
+                                @include zen-clear();
+                                @extend %more_link;
+                                text-align: center;
+                                margin: 20px 0px;
+                                padding: 20px;
+                            }
+                        }
+                    }
+                    //聯絡我們--------------------------------------------------------------------------------------------
+                    #block-block-1 {
+                        margin-top: $content-margin-top;
+                        color: $content_color;
+                    }
+                    #block-webform-client-block-1 {
+                        margin-top: $content-margin-top;
+                        margin-bottom: 60px;
+                        color: $content_color;
+                        label {
+                            margin-bottom: 5px;
+                        }
+                        input {
+                            width: 100%;
+                            max-width: 560px;
+                            background-color: #ffffff;
+                            border: 1px solid $border_color;
+                            box-sizing: border-box;
+                            padding: 10px;
+                        }
+                        textarea {
+                            height: 300px;
+                            background-color: #ffffff;
+                            border: 1px solid $border_color;
+                            box-sizing: border-box;
+                            padding: 10px;
+                        }
+                        .webform-submit {
+                            height: 50px;
+                            width: 100px;
+                            background-color: $content_color;
+                            color: #ffffff;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                //end content code -------------------------------------------------------------------------------------------
+            }
+        }
+        
+        //end page code----------------------------------------------------------------------------
+        // footer
+        #footer-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 0 10px;
+            color: $content_color;
+            &:before {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 50%;
+                position: absolute;
+                bottom: -50px;
+                left: 0px;
+                background: url("/sites/default/files/footer_back_l.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: -1;
+            }
+            &:after {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 50%;
+                position: absolute;
+                bottom: -50px;
+                right: 0px;
+                background: url("/sites/default/files/footer_back_r.png");
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: -1;
+            }
+        #footer {
+                padding: 0px;
+                max-width: 1440px;
+                margin: 0 auto;
+                border-top: 1px solid;
+                // border-bottom: 1px solid;
+                //頁尾選單-------------------------------------------------
+                #block-menu-menu-footer-menu {
+                    padding: 20px 0px;
+                    //float: left;
+                    .menu {
+                        .menu__item {
+                            display: inline-block;
+                            margin: 10px 0px;
+                            a {
+                                //color: $link_color;
+                                position: relative;
+                                box-sizing:border-box;
+                                padding: 0px 20px;
+                            }
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                //end for頁尾選單-------------------------------------------------
+                //頁尾icon選單-------------------------------------------------
+                #block-menu-menu-footer-icon {
+                    padding: 20px 0px;
+                    //float: right;
+                    .menu {
+                        .menu__item {
+                            display: inline-block;
+                            margin: 10px 0px;
+                            a {
+                                //color: $link_color;
+                                position: relative;
+                                box-sizing:border-box;
+                                padding: 0px 20px;
+                            }
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                //end for 頁尾icon選單-------------------------------------------------
+                #block-block-3 {
+                    clear: both;
+                    border-top: 1px solid $border_color;
+                    text-align: center;
+                    padding: 10px 0px;
+                    p {
+                        margin: 5px 0px;
+                    }
+                }
+            }
+        }
+        
+        .ajax-progress-throbber {
+            display: none;
+        }
+        
+        //footer end
