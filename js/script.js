@@ -20,7 +20,6 @@
             // Place your code here.
 
 
-
             $(window).load(function() {
                 $('#loading').fadeOut("slow");
 

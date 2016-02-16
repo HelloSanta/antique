@@ -408,8 +408,12 @@
                             .view-content {
                                 .item-list {
                                     ul {
+                                        text-align:center;
+                                        font-size:0px;
                                         .views-row {
-                                            @include grid(3, 4%);
+                                            font-size:18px;
+                                            text-align:left;
+                                            @include grid-special(3, 4%);
                                         }
                                     }
                                 }
@@ -422,8 +426,12 @@
                             .view-content {
                                 .item-list {
                                     ul {
+                                        text-align:center;
+                                        font-size:0px;
                                         .views-row {
-                                            @include grid(3, 2%);
+                                            font-size:18px;
+                                            text-align:left;
+                                            @include grid-special(3, 4%);
                                         }
                                     }
                                 }
@@ -864,7 +872,6 @@
                     #block-menu-menu-footer-icon {
                         text-align: center;
                         padding-top: 0px!important;
-
                     }
                     //end for 頁尾icon選單-------------------------------------------------
                 }

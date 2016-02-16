@@ -22,6 +22,27 @@
     }
 }
 
+@mixin grid-special($numPerRow, $margin) {
+    width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+    &:nth-child(n) {
+        margin-bottom: $margin;
+        margin-right: $margin;
+        display: inline-block;
+    }
+    &:nth-child(#{5}n+3) {
+        margin-right: 0;
+    }
+    &:nth-child(#{5}n+4) {
+        margin-right: $margin;
+    }
+    &:nth-child(#{5}n+5) {
+        margin-left: $margin;
+    }
+    &:last-child{
+        display: none;
+    }
+}
+
 // 置中
 @mixin horizontal-center {
     margin-left: auto;
@@ -130,6 +151,27 @@
     -ms-transform: translate($trans-width, $trans-height);
     -webkit-transform: translate($trans-width, $trans-height);
     transform: translate($trans-width, $trans-height);
+}
+
+//li高度一致(下在ul底下)-----------------------------------
+@mixin list-flex-wrap {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    li {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+@mixin align-self($value) {
+    -webkit-align-self: $value;
+    -ms-align-self: $value;
+    align-self: $value;
 }
 
 //文字持垂直置中 extend
