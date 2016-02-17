@@ -408,11 +408,11 @@
                             .view-content {
                                 .item-list {
                                     ul {
-                                        text-align:center;
-                                        font-size:0px;
+                                        text-align: center;
+                                        font-size: 0px;
                                         .views-row {
-                                            font-size:18px;
-                                            text-align:left;
+                                            font-size: 16px;
+                                            text-align: left;
                                             @include grid-special(3, 4%);
                                         }
                                     }
@@ -426,12 +426,14 @@
                             .view-content {
                                 .item-list {
                                     ul {
-                                        text-align:center;
-                                        font-size:0px;
+                                        text-align: center;
+                                        font-size: 0px;
                                         .views-row {
-                                            font-size:18px;
-                                            text-align:left;
+                                            font-size: 16px;
+                                            text-align: left;
                                             @include grid-special(3, 4%);
+                                            box-sizing: border-box;
+                                            padding: 20px;
                                         }
                                     }
                                 }
@@ -596,6 +598,9 @@
                                     ul {
                                         .views-row {
                                             @include grid(2, 4%);
+                                            &:nth-child(5){
+                                                display: none;
+                                            }
                                         }
                                     }
                                 }
@@ -609,7 +614,7 @@
                                 .item-list {
                                     ul {
                                         .views-row {
-                                            @include grid(3, 2%);
+                                            @include grid(2, 2%);
                                         }
                                     }
                                 }

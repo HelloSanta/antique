@@ -75,7 +75,7 @@ ul {
  */
 @at-root {
   @keyframes carousel {
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     0%, 5% {
       -webkit-transform: translateX(0%);
       -moz-transform: translateX(0%);
@@ -86,12 +86,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     7.77778% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     10.55556%, 15.55556% {
       -webkit-transform: translateX(-10%);
       -moz-transform: translateX(-10%);
@@ -102,12 +102,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     18.33333% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     21.11111%, 26.11111% {
       -webkit-transform: translateX(-20%);
       -moz-transform: translateX(-20%);
@@ -118,12 +118,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     28.88889% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     31.66667%, 36.66667% {
       -webkit-transform: translateX(-30%);
       -moz-transform: translateX(-30%);
@@ -134,12 +134,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     39.44444% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     42.22222%, 47.22222% {
       -webkit-transform: translateX(-40%);
       -moz-transform: translateX(-40%);
@@ -150,12 +150,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     50% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     52.77778%, 57.77778% {
       -webkit-transform: translateX(-50%);
       -moz-transform: translateX(-50%);
@@ -166,12 +166,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     60.55556% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     63.33333%, 68.33333% {
       -webkit-transform: translateX(-60%);
       -moz-transform: translateX(-60%);
@@ -182,12 +182,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     71.11111% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     73.88889%, 78.88889% {
       -webkit-transform: translateX(-70%);
       -moz-transform: translateX(-70%);
@@ -198,12 +198,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     81.66667% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     84.44444%, 89.44444% {
       -webkit-transform: translateX(-80%);
       -moz-transform: translateX(-80%);
@@ -214,12 +214,12 @@ ul {
       filter: blur(0);
     }
 
-    /* line 776, ../sass/_mixin.scss */
+    /* line 773, ../sass/_mixin.scss */
     92.22222% {
       background-color: #000;
     }
 
-    /* line 781, ../sass/_mixin.scss */
+    /* line 778, ../sass/_mixin.scss */
     95%, 100% {
       -webkit-transform: translateX(-90%);
       -moz-transform: translateX(-90%);

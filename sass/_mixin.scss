@@ -38,9 +38,6 @@
     &:nth-child(#{5}n+5) {
         margin-left: $margin;
     }
-    &:last-child{
-        display: none;
-    }
 }
 
 // 置中
