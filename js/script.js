@@ -21,7 +21,7 @@
 
 
             $(window).load(function() {
-                $('#loading').fadeOut("slow");
+                //$('#loading').fadeOut("slow");
 
 $("#block-menu-menu-footer-icon .menu .menu__item a").html("<p></p>");
 
@@ -42,7 +42,8 @@ $("#block-menu-menu-footer-icon .menu .menu__item a").html("<p></p>");
 
 //front-product-masonry
 
-                $('.product-block').masonry({
+
+   $('.product-block').masonry({
                     // options...
                     itemSelector: '.views-row',
                     columnWidth: 1,
@@ -50,7 +51,13 @@ $("#block-menu-menu-footer-icon .menu .menu__item a").html("<p></p>");
 
                 });
 
+
+             
             })
+
+
+
+
 
 
             //responsive-menu-color
@@ -98,6 +105,13 @@ $("#block-menu-menu-footer-icon .menu .menu__item a").html("<p></p>");
                 $(".view-about-us .views-row-odd").addClass("animated slideInLeft")
 
 
+   $('.product-block').masonry({
+                    // options...
+                    itemSelector: '.views-row',
+                    columnWidth: 1,
+                    //gutter:10,
+
+                });
 
 
 

@@ -37,6 +37,11 @@
             src: url('/sites/all/themes/antique/font-style/genshin/GenShinGothic-P-Bold.ttf') format('opentype');
            
         }
+
+body{
+    
+}
+
         
         //extend 
         %more_link {
@@ -67,16 +72,16 @@
         }
         
         //for all code------------------------------------------------------------------------------------------------------------------------------------------------------------
-        #loading {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            background-color: #fff;
-            // background: url('../images/page-loader.gif') 50% 50% no-repeat #f9f9f9
-        }
+        // #loading {
+        //     position: fixed;
+        //     left: 0;
+        //     top: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     z-index: 9999;
+        //     background-color: #fff;
+        //     // background: url('../images/page-loader.gif') 50% 50% no-repeat #f9f9f9
+        // }
         
         .spinner {
             margin: 0 auto;
