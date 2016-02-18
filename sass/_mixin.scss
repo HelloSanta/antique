@@ -20,6 +20,9 @@
     &:nth-child(#{$numPerRow}n) {
         margin-right: 0;
     }
+    &:nth-child(#{$numPerRow}1) {
+      clear:both;
+    }
 }
 
 @mixin grid-special($numPerRow, $margin) {
