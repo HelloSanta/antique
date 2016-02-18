@@ -8,13 +8,7 @@
  */
 ?>
 
-<div id='loading'>
-<div class="spinner">
-<div class="dot1"></div>
-<div class="dot2"></div>
-<div class="dot3"></div>
-</div>
-</div>
+
 <header class="header" id="header" role="banner">
 <div class="header-wrape">
 
